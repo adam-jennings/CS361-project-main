@@ -1,1 +1,1 @@
-Hello!
+This is the repository for my CS361 project
