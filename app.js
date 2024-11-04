@@ -10,7 +10,7 @@ const cors = require('cors');
 const path = require('path');
 app.use(cors());
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: false }));
 const { auth,requiresAuth } = require('express-openid-connect')
 
 const auth0Config = {
@@ -23,25 +23,25 @@ const auth0Config = {
  }
 app.use(auth(auth0Config));
 
- 
+
 app.get('/', (req, res) => {
    res.redirect(req.oidc.isAuthenticated()?'/exercises':'/login')
 })
 
 
 //Load routes
-const exerciseRouter = require('./src/routes/exercise.routes.js');
+const exerciseRouter = require('./src/routes/exercise.routes.js')
 
 //Use routes
-app.use('/exercises', exerciseRouter); 
+app.use('/exercises', exerciseRouter)
 
 
 
 app.use(express.static('public'));
 
 //404
-app.use('*', (req, res) => {res.send("oops")}); 
+app.use('*', (req, res) => {res.send("oops")})
 
 app.listen(port, () => {
-    console.log(`Server is up at port ${port}`);
- });
+    console.log(`Server is up at port ${port}`)
+ })

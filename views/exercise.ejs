@@ -12,15 +12,17 @@
     </div>
 
     <div class="exercise-detail-content">
-        <h2>Exercise Details : Excercise 1</h2>
+        <h2>Exercise Details : <%= locals.exerciseData.name %></h2>
         <h3>Details</h3>
-        <p>This is where the details of the exercises are displayed...</p>
-        <h3>Muscles Used</h3>
-        <ul>
-            <li>Biceps</li>
-            <li>Triceps</li>
-            <li>Something Else</li>
-        </ul>
+        <p><%= locals.exerciseData.details %></p>
+        <h3>Muscles Used:</h3>
+        
+        <% for (muscle of locals.exerciseData.musclesUsed){ %>
+            <li>
+                <%= muscle %>
+            </li>
+        <% } %>
+        
     </div>
 
 

@@ -12,4 +12,6 @@ router.get('/view/:exercisesID',requiresAuth(), controller.viewExercise);
 
 router.get('/create',requiresAuth(), controller.createExercise);
 
+router.post('/create',requiresAuth(), controller.createExercisePost);
+
 module.exports = router;

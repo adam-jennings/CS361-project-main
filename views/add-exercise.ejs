@@ -13,25 +13,37 @@
 
     <div class="main-content">
         <h2>Add Exercises</h2>
-        <form>
+        <form method="POST" id="loginformA">
             <label>Exercise Name</label><br>
-            <input id="exercise-name"><br>
+            <input id="exercise-name" name="exercise-name"><br>
 
             <label>Brief Description (optional)</label><br>
-            <textarea id="exercise-desc"></textarea><br>
+            <textarea id="exercise-desc" name="exercise-desc"></textarea><br>
             Brief description will be displayed in the exercise browser<br>
 
             <label>Details (optional)</label><br>
-            <textarea id="exercise-details"></textarea><br>
+            <textarea id="exercise-details" name="exercise-details"></textarea><br>
             
             <label>Muscles Used</label><br>
             <input type="checkbox" id="biceps" name="muscles-used" value="biceps"/>
             <label for="biceps">Biceps</label><br>
+
             <input type="checkbox" id="triceps" name="muscles-used" value="triceps"/>
             <label for="triceps">Triceps</label><br>
+
             <input type="checkbox" id="quads" name="muscles-used" value="quads"/>
             <label for="quads">Quads</label><br>
-            <button>Add Exercise</button>
+
+            <input type="checkbox" id="lats" name="muscles-used" value="lats"/>
+            <label for="lats">Lats</label><br>
+
+            <input type="checkbox" id="abs" name="muscles-used" value="abs"/>
+            <label for="abs">Abs</label><br>
+
+            <input type="checkbox" id="calves" name="muscles-used" value="calves"/>
+            <label for="calves">Calves</label><br>
+
+            <input type="submit" value="Add Exercise"></input>
             <button>Cancel</button>
         </form>
     </div>

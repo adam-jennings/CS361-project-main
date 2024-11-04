@@ -14,9 +14,11 @@
     <div class="main-content">
         <div class="align-right"><a href="/exercises/create" class="confirm-button">Add New Exercise</a></div>
         <h2>Saved Exercises:</h2>
-        <%- include ("./partials/exercise-preview-card") %>
-        <%- include ("./partials/exercise-preview-card") %>
-        <%- include ("./partials/exercise-preview-card") %>
+
+        <% for(exerciseData of locals.exercises) {%>
+            <%- include ("./partials/exercise-preview-card",exerciseData) %>
+         <% } %>
+
     </div>
 
 
