@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ("./partials/head",title="Browse Exercises") %>
+</head>
+
+<body>
+    <%- include ("./partials/navbar") %>
+    <div class="upper-content">
+        <h1>Workout Tracker</h1>
+        <p>Welcome to Workout Tracker</p>
+    </div>
+
+    <div class="main-content">
+        <div class="align-right"><a href="/exercises/create" class="confirm-button">Add New Exercise</a></div>
+        <h2>Saved Exercises:</h2>
+        <%- include ("./partials/exercise-preview-card") %>
+        <%- include ("./partials/exercise-preview-card") %>
+        <%- include ("./partials/exercise-preview-card") %>
+    </div>
+
+
+</body>
+    
+</html>

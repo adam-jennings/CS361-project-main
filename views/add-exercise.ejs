@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ("./partials/head",title="Add Exercise") %>
+</head>
+
+<body>
+    <%- include ("./partials/navbar") %>
+    <div class="upper-content">
+        <h1>Workout Tracker</h1>
+        <p>Welcome to Workout Tracker</p>
+    </div>
+
+    <div class="main-content">
+        <h2>Add Exercises</h2>
+        <form>
+            <label>Exercise Name</label><br>
+            <input id="exercise-name"><br>
+
+            <label>Brief Description (optional)</label><br>
+            <textarea id="exercise-desc"></textarea><br>
+            Brief description will be displayed in the exercise browser<br>
+
+            <label>Details (optional)</label><br>
+            <textarea id="exercise-details"></textarea><br>
+            
+            <label>Muscles Used</label><br>
+            <input type="checkbox" id="biceps" name="muscles-used" value="biceps"/>
+            <label for="biceps">Biceps</label><br>
+            <input type="checkbox" id="triceps" name="muscles-used" value="triceps"/>
+            <label for="triceps">Triceps</label><br>
+            <input type="checkbox" id="quads" name="muscles-used" value="quads"/>
+            <label for="quads">Quads</label><br>
+            <button>Add Exercise</button>
+            <button>Cancel</button>
+        </form>
+    </div>
+
+
+</body>
+    
+</html>

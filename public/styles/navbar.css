@@ -1,0 +1,16 @@
+#navbar ul{
+    display: contents;
+}
+
+#navbar li{
+    list-style-type: none;
+    display: inline;
+}
+
+#navbar a{
+    color: black;
+    text-decoration: none;
+}
+#navbar a:hover{
+    text-decoration: underline;
+}

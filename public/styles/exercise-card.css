@@ -1,0 +1,30 @@
+.exercise-preview-card{
+    width:40rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    background-color: lightgray;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.exercise-preview-card .info{
+    flex: 60%;
+    padding-bottom: 1rem;
+}
+
+.exercise-preview-card .details-button{
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.exercise-preview-card a{
+    background-color: rgb(38, 38, 38);
+    border-radius: .25rem;
+    padding: .5rem;
+    color: white;
+    text-decoration: none;
+}
