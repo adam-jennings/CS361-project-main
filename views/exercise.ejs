@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <%- include ("./partials/head",title="View Exercise Details") %>
+    <%- include ("./partials/head",title="View Exercise Details" ) %>
 </head>
 
 <body>
     <%- include ("./partials/navbar") %>
-    <div class="upper-content">
-        <h1>Workout Tracker</h1>
-        <p>Welcome to Workout Tracker</p>
-    </div>
+        <div class="upper-content">
+            <h1>Workout Tracker</h1>
+            <p>Welcome to Workout Tracker</p>
+        </div>
 
-    <div class="exercise-detail-content">
-        <h2>Exercise Details : <%= locals.exerciseData.name %></h2>
-        <h3>Details</h3>
-        <p><%= locals.exerciseData.details %></p>
-        <h3>Muscles Used:</h3>
-        
-        <% for (muscle of locals.exerciseData.musclesUsed){ %>
-            <li>
-                <%= muscle %>
-            </li>
-        <% } %>
-        
-    </div>
+        <div class="exercise-detail-content">
+            <h2>Exercise Details : <%= locals.exerciseData.name %>
+            </h2>
+            <h3>Details</h3>
+            <p>
+                <%= locals.exerciseData.details %>
+            </p>
+            <h3>Muscles Used:</h3>
+
+            <% for (muscle of locals.exerciseData.musclesUsed){ %>
+                <li>
+                    <%= muscle %>
+                </li>
+                <% } %>
+                    <a href="../delete/<%= locals.exerciseData._id %>">Delete Exercise</a>
+        </div>
 
 
 </body>
-    
+
 </html>

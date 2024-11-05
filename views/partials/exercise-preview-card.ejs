@@ -3,10 +3,12 @@
 <div class="exercise-preview-card">
     <div class="info">
 
-    <h3><%= locals.name || "Exercise Name" %></h3>
-    <%= locals.desc || "Exercise Info" %>
+        <h3>
+            <%= locals.name || "Exercise Name" %>
+        </h3>
+        <%= locals.desc || "Exercise Info" %>
     </div>
     <div class="details-button">
-    <a href="exercises/view/<%= locals._id %>">View Details</a>
+        <a href="/exercises/view/<%= locals._id %>">View Details</a>
     </div>
 </div>

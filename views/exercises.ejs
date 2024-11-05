@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <%- include ("./partials/head",title="Browse Exercises") %>
+    <%- include ("./partials/head",title="Browse Exercises" ) %>
 </head>
 
 <body>
     <%- include ("./partials/navbar") %>
-    <div class="upper-content">
-        <h1>Workout Tracker</h1>
-        <p>Welcome to Workout Tracker</p>
-    </div>
+        <div class="upper-content">
+            <h1>Workout Tracker</h1>
+            <p>Welcome to Workout Tracker</p>
+        </div>
 
-    <div class="main-content">
-        <div class="align-right"><a href="/exercises/create" class="confirm-button">Add New Exercise</a></div>
-        <h2>Saved Exercises:</h2>
+        <div class="main-content">
+            <div class="align-right"><a href="/exercises/create" class="confirm-button">Add New Exercise</a></div>
 
-        <% for(exerciseData of locals.exercises) {%>
-            <%- include ("./partials/exercise-preview-card",exerciseData) %>
-         <% } %>
+            <% if (locals.recentRemove) { %>
+                <div>
+                    Recently removed : <%= locals.removedData.name %><br>
+                        <a href="/exercises/readd"> click here to undo remove</a>
+                </div>
+                <% } %>
 
-    </div>
+                    <h2>Saved Exercises:</h2>
+
+                    <% for(exerciseData of locals.exercises) {%>
+                        <%- include ("./partials/exercise-preview-card",exerciseData) %>
+                            <% } %>
+
+        </div>
 
 
 </body>
-    
+
 </html>
