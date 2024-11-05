@@ -26,8 +26,13 @@
                     <%= muscle %>
                 </li>
                 <% } %>
-                    <a href="../delete/<%= locals.exerciseData._id %>">Delete Exercise</a>
         </div>
+        <div style="margin-top: 1rem;margin-bottom: 1rem;">
+            <a class="delete-button" href="../delete/<%= locals.exerciseData._id %>">Delete Exercise</a><br>
+        </div>
+        (You will have a chance to undo this deletion on the next page)
+
+
 
 
 </body>
