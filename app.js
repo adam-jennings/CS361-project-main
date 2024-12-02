@@ -46,7 +46,7 @@ app.use('/exercises', exerciseRouter)
 app.use('/orm', ormRouter)
 
 // Static file hosting
-app.use(express.static('public'));
+app.use(express.static('public'))
 
 // 404
 app.use('*', (req, res) => { res.send("oops") })
