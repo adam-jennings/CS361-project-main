@@ -38,9 +38,12 @@ app.get('/', (req, res) => {
 
 // Load routes
 const exerciseRouter = require('./src/routes/exercise.routes.js')
+const ormRouter = require('./src/routes/orm.routes.js')
 
 // Use routes
 app.use('/exercises', exerciseRouter)
+
+app.use('/orm', ormRouter)
 
 // Static file hosting
 app.use(express.static('public'));

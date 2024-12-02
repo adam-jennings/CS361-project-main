@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ("./partials/head",title="Calculate One Rep Max" ) %>
+</head>
+
+<body>
+    <%- include ("./partials/navbar") %>
+        <div class="upper-content">
+            <h1>Workout Tracker</h1>
+            <p>One rep max calculator</p>
+        </div>
+
+        <div class="">
+            <form method="POST" id="ORMForm">
+                <label>Weight</label><br>
+                <input id="weight" name="weight" type="number"><br>
+
+                <label>Number of Reps</label><br>
+                <input id="reps" name="reps" type="number"><br>
+
+                <input type="submit" value="Calculate One Rep Max"></input>
+            </form>
+        </div>
+        <% if (locals.oneRepMax) { %>
+            One Rep Max : <%= oneRepMax %>
+                <% } %>
+
+
+
+
+</body>
+
+</html>

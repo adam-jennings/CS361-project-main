@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require("mongodb")
-
+const axios = require('axios')
 const exercises = async (req, res) => {
     const mongoClient = new MongoClient(process.env.MONGODB_URI)
     const database = mongoClient.db('CS361Database')
@@ -15,10 +15,15 @@ const exercises = async (req, res) => {
     const recentRemove = req.session.recentRemove
     req.session.recentRemove = false
 
+    //https://quote-generator-api-7gw0.onrender.com/
+
+    const response = await axios.get(process.env.QUOTE_ENDPOINT);
+    const qouteData = response.data;
     res.render('exercises', {
         'exercises': allExercises,
         'removedData': req.session.removedData,
-        'recentRemove': recentRemove
+        'recentRemove': recentRemove,
+        'quote': qouteData
     })
 }
 
