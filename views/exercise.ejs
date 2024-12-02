@@ -26,6 +26,10 @@
                     <%= muscle %>
                 </li>
                 <% } %>
+
+                    <% if (locals.exerciseImageURL){ %>
+                        <img src='<%= locals.exerciseImageURL %>'>
+                        <% } %>
         </div>
         <div style="margin-top: 1rem;margin-bottom: 1rem;">
             <a class="delete-button" href="../delete/<%= locals.exerciseData._id %>">Delete Exercise</a><br>

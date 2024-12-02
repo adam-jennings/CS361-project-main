@@ -32,11 +32,21 @@ const viewExercise = async (req, res) => {
     const mongoClient = new MongoClient(process.env.MONGODB_URI)
     const database = mongoClient.db('CS361Database')
 
+
+    let exerciseImageURL = ''
     const exercises = database.collection('exercises')
     const exercise = await exercises.findOne(new ObjectId(req.params.exerciseID))
-    //console.log(exercise)
+    try {
+        const response = await axios.post(process.env.IMAGESERVICE_ENDPOINT, { 'targeted': exercise.musclesUsed });
+        exerciseImageURL = response.data
+    }
+    catch {
+        console.error('Could Not Reach Image Service')
+    }
+    console.log(exercise)
     mongoClient.close()
-    res.render('exercise', { exerciseData: exercise })
+
+    res.render('exercise', { exerciseData: exercise, exerciseImageURL: exerciseImageURL })
 }
 
 const createExercise = (req, res) => {
