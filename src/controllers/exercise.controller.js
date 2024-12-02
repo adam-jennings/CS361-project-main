@@ -37,8 +37,9 @@ const viewExercise = async (req, res) => {
     const exercises = database.collection('exercises')
     const exercise = await exercises.findOne(new ObjectId(req.params.exerciseID))
     try {
-        const response = await axios.post(process.env.IMAGESERVICE_ENDPOINT, { 'targeted': exercise.musclesUsed });
-        exerciseImageURL = response.data
+        const response = await axios.post(process.env.IMAGESERVICE_ENDPOINT + 'getImage', { 'targeted': exercise.musclesUsed });
+        exerciseImageURL = process.env.IMAGESERVICE_ENDPOINT + response.data.imageURL
+        console.log(exerciseImageURL)
     }
     catch {
         console.error('Could Not Reach Image Service')
