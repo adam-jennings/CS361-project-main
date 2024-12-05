@@ -27,8 +27,8 @@
                 </li>
                 <% } %>
 
-                    <% if (locals.exerciseImageURL){ %>
-                        <img src='<%= locals.exerciseImageURL %>'>
+                    <% for (images of locals.exerciseImageURLs){ %>
+                        <img src='<%= images %>'>
                         <% } %>
         </div>
         <div style="margin-top: 1rem;margin-bottom: 1rem;">
